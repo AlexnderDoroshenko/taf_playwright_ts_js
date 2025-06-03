@@ -1,0 +1,25 @@
+{
+  "name": "taf_playwright_ts_js",
+  "version": "1.0.0",
+  "description": "A unified testing framework to cover API, UI, and Database tests using Playwright, TypeScript, Axios, and PostgreSQL.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test tests/ui",
+    "test:api": "npx playwright test tests/api",
+    "test:db": "npx playwright test tests/db",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "dotenv": "^10.0.0",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.16.3",
+    "@types/node": "^22.15.29",
+    "typescript": "^4.5.4"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}

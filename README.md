@@ -51,6 +51,8 @@ tests/
 
 ```bash
 npm install
+npm i --save-dev @types/node
+npm audit fix --force
 ```
 
 2. **Set up .env file**
@@ -181,5 +183,3 @@ reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]]
 * Prefer using Playwright’s `page.request` or `request.newContext()` for all API test flows.
 * Keep tests atomic and modular.
 * DB access should be optional and minimal — use it only for verifying internal state.
-
----
