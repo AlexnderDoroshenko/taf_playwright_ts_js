@@ -98,13 +98,13 @@ npx playwright test tests/db
 
 ### 📦 Libraries Used
 
-| Category | Library                                                       |
-| -------- | ------------------------------------------------------------- |
-| UI/API   | [Playwright](https://playwright.dev)                          |
-| HTTP     | [Axios](https://axios-http.com) *(fallback only)*             |
-| DB       | [pg](https://node-postgres.com)                               |
-| ENV      | [dotenv](https://github.com/motdotla/dotenv)                  |
-| Logs     | [debug](https://www.npmjs.com/package/debug) or custom logger |
+| Category | Library                                           |
+| -------- |---------------------------------------------------|
+| UI/API   | [Playwright, pixelmatch](https://playwright.dev)  |
+| HTTP     | [Axios](https://axios-http.com) *(fallback only)* |
+| DB       | [pg](https://node-postgres.com)                   |
+| ENV      | [dotenv](https://github.com/motdotla/dotenv)      |
+| Logs     | [debug](https://www.npmjs.com/package/debug)      |
 
 ---
 
@@ -150,6 +150,7 @@ jobs:
       - run: npm install
       - run: npx playwright install --with-deps
       - run: npx playwright test
+      - run: npx playwright test tests/pixel
 ```
 
 ---
