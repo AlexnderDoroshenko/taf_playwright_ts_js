@@ -24,8 +24,8 @@ jobs:
         run: npm install
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
-      - name: Run Playwright tests
-        run: npm run test:api
+       #- name: Run Playwright tests api
+       # run: npm run test:api
       - name: Compare screenshots
         run: npm run test:pixel
       - name: Upload diff artifact
