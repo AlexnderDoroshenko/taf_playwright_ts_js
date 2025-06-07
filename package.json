@@ -8,6 +8,7 @@
     "test:ui": "npx playwright test tests/ui",
     "test:api": "npx playwright test tests/api",
     "test:db": "npx playwright test tests/db",
+    "test:ui:pixel": "npx playwright test tests/ui/pixel",
     "build": "tsc"
   },
   "dependencies": {
@@ -18,8 +19,25 @@
   "devDependencies": {
     "@playwright/test": "^1.16.3",
     "@types/node": "^22.15.29",
+    "fs-extra": "^11.3.0",
+    "pixelmatch": "^7.1.0",
+    "playwright": "^1.52.0",
+    "pngjs": "^7.0.0",
     "typescript": "^4.5.4"
   },
-  "author": "Your Name",
-  "license": "MIT"
+  "author": "Doroshenko Oleksandr",
+  "license": "MIT",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexnderDoroshenko/taf_playwright_ts_js.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AlexnderDoroshenko/taf_playwright_ts_js/issues"
+  },
+  "homepage": "https://github.com/AlexnderDoroshenko/taf_playwright_ts_js#readme"
 }
