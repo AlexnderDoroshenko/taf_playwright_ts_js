@@ -8,7 +8,7 @@
     "test:ui": "npx playwright test tests/ui",
     "test:api": "npx playwright test tests/api",
     "test:db": "npx playwright test tests/db",
-    "test:ui:pixel": "npx playwright test tests/pixel",
+    "test:pixel": "npx playwright test tests/pixel",
     "build": "tsc"
   },
   "dependencies": {

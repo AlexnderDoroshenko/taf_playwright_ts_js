@@ -7,6 +7,8 @@ import { test, expect } from '@playwright/test';
 import * as fs from 'fs';
 import fsExtra from 'fs-extra';
 // TODO: Fix empty import from utils
+import { config } from '../utils/config';
+
 
 /**
  * Visual regression test for the homepage
@@ -25,7 +27,7 @@ test('visual test for homepage', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   
   // Navigate to the target page
-  await page.goto('https://example.com');
+  await page.goto(config.BASE_URL);
   
   // Define paths for actual and baseline screenshots
   const actualPath = 'screenshots/actual/example.png';
