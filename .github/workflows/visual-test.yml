@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: UI
     env:
-      API_URL: ${{ API_URL }}
-      BASE_URL: ${{ BASE_URL }}
-      USER_EMAIL: ${{ USER_EMAIL }}
-      USER_PASSWORD: ${{ USER_PASSWORD }}
+      API_URL: ${{ vars.API_URL }}
+      BASE_URL: ${{ vars.BASE_URL }}
+      USER_EMAIL: ${{ vars.USER_EMAIL }}
+      USER_PASSWORD: ${{ vars.USER_PASSWORD }}
 
     steps:
       - name: Checkout code
