@@ -7,11 +7,12 @@ on:
 jobs:
   visual-test:
     runs-on: ubuntu-latest
+    environment: production
     env:
-      API_URL: ${{ vars.API_URL }}
-      BASE_URL: ${{ vars.BASE_URL }}
-      USER_EMAIL: ${{ vars.USER_EMAIL }}
-      USER_PASSWORD: ${{ vars.USER_PASSWORD }}
+      API_URL: ${{ env.API_URL }}
+      BASE_URL: ${{ env.BASE_URL }}
+      USER_EMAIL: ${{ env.USER_EMAIL }}
+      USER_PASSWORD: ${{ env.USER_PASSWORD }}
 
     steps:
       - name: Checkout code
