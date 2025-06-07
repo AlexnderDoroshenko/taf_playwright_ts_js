@@ -1,0 +1,35 @@
+name: Visual Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  visual-test:
+    runs-on: ubuntu-latest
+    env:
+      API_URL: ${{ vars.API_URL }}
+      BASE_URL: ${{ vars.BASE_URL }}
+      USER_EMAIL: ${{ vars.USER_EMAIL }}
+      USER_PASSWORD: ${{ vars.USER_PASSWORD }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm install
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: npm run test:api
+      - name: Compare screenshots
+        run: npm run test:pixel
+      - name: Upload diff artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: diff-screenshot
+          path: screenshots/diff/

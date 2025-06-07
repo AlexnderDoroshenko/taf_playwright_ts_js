@@ -51,6 +51,8 @@ tests/
 
 ```bash
 npm install
+npm i --save-dev @types/node
+npm audit fix --force
 ```
 
 2. **Set up .env file**
@@ -96,13 +98,13 @@ npx playwright test tests/db
 
 ### 📦 Libraries Used
 
-| Category | Library                                                       |
-| -------- | ------------------------------------------------------------- |
-| UI/API   | [Playwright](https://playwright.dev)                          |
-| HTTP     | [Axios](https://axios-http.com) *(fallback only)*             |
-| DB       | [pg](https://node-postgres.com)                               |
-| ENV      | [dotenv](https://github.com/motdotla/dotenv)                  |
-| Logs     | [debug](https://www.npmjs.com/package/debug) or custom logger |
+| Category | Library                                           |
+| -------- |---------------------------------------------------|
+| UI/API   | [Playwright, pixelmatch](https://playwright.dev)  |
+| HTTP     | [Axios](https://axios-http.com) *(fallback only)* |
+| DB       | [pg](https://node-postgres.com)                   |
+| ENV      | [dotenv](https://github.com/motdotla/dotenv)      |
+| Logs     | [debug](https://www.npmjs.com/package/debug)      |
 
 ---
 
@@ -148,6 +150,7 @@ jobs:
       - run: npm install
       - run: npx playwright install --with-deps
       - run: npx playwright test
+      - run: npx playwright test tests/pixel
 ```
 
 ---
@@ -181,5 +184,3 @@ reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]]
 * Prefer using Playwright’s `page.request` or `request.newContext()` for all API test flows.
 * Keep tests atomic and modular.
 * DB access should be optional and minimal — use it only for verifying internal state.
-
----
