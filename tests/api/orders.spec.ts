@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { config } from '../utils/config';
+import { config } from '../../config';
 
 test.describe('Order API Endpoints', () => {
   

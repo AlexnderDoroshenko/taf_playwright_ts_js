@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { config } from '../utils/config';
+import { config } from '../../config';
 import { ProductDTO, ProductImage } from '../../types/product';
 
 test.describe('Product API Endpoints', () => {

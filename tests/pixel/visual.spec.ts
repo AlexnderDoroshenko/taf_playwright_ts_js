@@ -7,7 +7,7 @@ import { test, expect } from '@playwright/test';
 import * as fs from 'fs';
 import fsExtra from 'fs-extra';
 // TODO: Fix empty import from utils
-import { config } from '../utils/config';
+import { config } from '../../config';
 
 
 /**
